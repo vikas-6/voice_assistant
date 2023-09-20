@@ -112,9 +112,9 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('calculator')) {
-        window.open('https://vikas-6.github.io/Calculator')
-        const finalText = "Opening Calculator";
+    else if(message.includes('open calculator')) {
+        window.open("https://vikas-6.github.io/Calculator");
+        const finalText = "Opening calculator";
         speech.text = finalText;
     }
 
