@@ -67,12 +67,12 @@ function speakThis(message) {
     }
 
     else if(message.includes('name')) {
-        const finalText = "My name is Inertia";
+        const finalText = "My name is LEX";
         speech.text = finalText;
     }
 
     else if(message.includes('open google')) {
-        window.open("https://google.com", "_blank");
+        window.open("https://google.com");
         const finalText = "Opening Google";
         speech.text = finalText;
     }
