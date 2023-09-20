@@ -32,7 +32,7 @@ function wishMe() {
 }
 
 window.addEventListener('load', ()=>{
-    speak("Activating Inertia");
+    speak("Activating LEX");
     speak("Going online");
     wishMe();
 })
@@ -68,6 +68,11 @@ function speakThis(message) {
 
     else if(message.includes('name')) {
         const finalText = "My name is LEX";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('who are you')) {
+        const finalText = "I am Lex - an ai voice assistant made by vikas";
         speech.text = finalText;
     }
 
@@ -108,7 +113,7 @@ function speakThis(message) {
     }
 
     else if(message.includes('calculator')) {
-        window.open('Calculator:///')
+        window.open('https://vikas-6.github.io/Calculator')
         const finalText = "Opening Calculator";
         speech.text = finalText;
     }
