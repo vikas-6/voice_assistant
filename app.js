@@ -88,12 +88,6 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if (message.includes("open bgmi")) {
-    window.open("intent:// bgmi");
-    const finalText = "opening bgmi";
-    speech.text = finalText;
-  }
-
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
@@ -123,6 +117,31 @@ function speakThis(message) {
         const finalText = "Opening calculator";
         speech.text = finalText;
     }
+
+    else if (message.includes("open")) {
+    const appName = message.split("open")[1].trim();
+    if (isAppInstalled(appName)) {
+      // Open the app
+      window.open(`myapp://${appName}`);
+      const finalText = `Opening ${appName}`;
+      speech.text = finalText;
+    } else {
+      // Check if the app is available on the Chrome Web Store
+      chrome.webstore.search(appName, (results) => {
+        if (results.length > 0) {
+          // Open the app in the Chrome Web Store
+          window.open(results[0].url, "_blank");
+          const finalText = `Opening ${appName} in the Chrome Web Store`;
+          speech.text = finalText;
+        } else {
+          // Open the app's official website
+          window.open(`https://${appName}.com`, "_blank");
+          const finalText = `Opening ${appName}'s official website`;
+          speech.text = finalText;
+        }
+      });
+    }
+  }
 
     else if(message.includes('open gitHub')) {
         window.open("www.github.com");
