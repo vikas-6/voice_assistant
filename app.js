@@ -88,9 +88,9 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if (message.includes("turn on flashlight")) {
-    window.open("intent:// flashlight");
-    const finalText = "Turning on flashlight";
+    else if (message.includes("open bgmi")) {
+    window.open("intent:// bgmi");
+    const finalText = "opening bgmi";
     speech.text = finalText;
   }
 
