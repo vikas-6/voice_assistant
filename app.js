@@ -56,13 +56,13 @@ function speakThis(message) {
 
     speech.text = "I did not understand what you said please try again";
 
-    if(message.includes('hey') || message.includes('hello')) {
+    if(message.includes('hey') || message.includes('hello') || message.includes('hi')) {
         const finalText = "Hello Boss";
         speech.text = finalText;
     }
 
     else if(message.includes('how are you')) {
-        const finalText = "I am fine boss tell me how can i help you";
+        const finalText = "I am fine boss, tell me, how can i help you";
         speech.text = finalText;
     }
 
@@ -72,7 +72,7 @@ function speakThis(message) {
     }
 
     else if(message.includes('who are you')) {
-        const finalText = "I am Lex - an ai voice assistant made by vikas";
+        const finalText = "I am Lex - an ai voice assistant made by vikaaas";
         speech.text = finalText;
     }
 
@@ -115,6 +115,12 @@ function speakThis(message) {
     else if(message.includes('open calculator')) {
         window.open("https://vikas-6.github.io/Calculator");
         const finalText = "Opening calculator";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('open gitHub')) {
+        window.open("www.github.com");
+        const finalText = "Opening github";
         speech.text = finalText;
     }
 
