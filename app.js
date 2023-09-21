@@ -32,7 +32,7 @@ function wishMe() {
 }
 
 window.addEventListener('load', ()=>{
-    speak("Activating Inertia");
+    speak("Activating LEX");
     speak("Going online");
     wishMe();
 })
@@ -56,23 +56,28 @@ function speakThis(message) {
 
     speech.text = "I did not understand what you said please try again";
 
-    if(message.includes('hey') || message.includes('hello')) {
+    if(message.includes('hey') || message.includes('hello') || message.includes('hi')) {
         const finalText = "Hello Boss";
         speech.text = finalText;
     }
 
     else if(message.includes('how are you')) {
-        const finalText = "I am fine boss tell me how can i help you";
+        const finalText = "I am fine boss, tell me, how can i help you";
         speech.text = finalText;
     }
 
     else if(message.includes('name')) {
-        const finalText = "My name is Inertia";
+        const finalText = "My name is LEX";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('who are you')) {
+        const finalText = "I am Lex - an ai voice assistant made by vikaaas";
         speech.text = finalText;
     }
 
     else if(message.includes('open google')) {
-        window.open("https://google.com", "_blank");
+        window.open("https://google.com");
         const finalText = "Opening Google";
         speech.text = finalText;
     }
@@ -107,9 +112,22 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('calculator')) {
-        window.open('Calculator:///')
-        const finalText = "Opening Calculator";
+    else if(message.includes('open calculator')) {
+        window.open("https://vikas-6.github.io/Calculator");
+        const finalText = "Opening calculator";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('open app')) {
+    const appName = message.split(' ')[2]; // Get the app name from the message
+    window.open(`${appName}://`, "_blank"); // Open the app using the custom URL scheme
+    const finalText = `Opening ${appName}`;
+    speech.text = finalText;
+}
+
+    else if(message.includes('open gitHub')) {
+        window.open("www.github.com");
+        const finalText = "Opening github";
         speech.text = finalText;
     }
 
